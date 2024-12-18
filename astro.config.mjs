@@ -11,5 +11,7 @@ export default defineConfig({
     {
       applyBaseStyles: false,
     }
-  )]
+  )],
+  site: "https://lab.x7md.net",
+  base : "al-naslaa-rock"
 });
