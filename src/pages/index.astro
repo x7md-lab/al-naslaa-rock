@@ -5,12 +5,73 @@ import '@/styles/globals.css'
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Al Naslaa</title>
+		<style>
+			html, body {
+				height: 100%;
+			}
+			@keyframes wipe-out-up {
+			from {
+				clip-path: inset(0 0 0 0);
+			}
+			to {
+				clip-path: inset(0 0 100% 0);
+			}
+			}
+			[transition-style="out:wipe:up"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 1s;
+			}
+
+			[transition-style="out:wipe:up2"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 1.75s;
+			}
+
+			[transition-style="out:wipe:up3"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 2.5s;
+			}
+
+			[transition-style="out:wipe:up4"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 3.75s;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main class="grid justify-center items-center w-full h-full relative max-h-full">
+			<h2 class="absolute p-4 text-white drop-shadow-lg text-6xl text-center w-full">Cooming Soon...</h2>
+			<img class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="/al-naslaa-art.png" />
+			<img 
+			transition-style="out:wipe:up4"
+			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="/al-naslaa.jpg" />
+			<img 
+			transition-style="out:wipe:up3"
+			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="/al-naslaa-contrast.jpg" />
+			<img 
+			transition-style="out:wipe:up2"
+			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="/al-naslaa-black-contrast.jpg" />
+			<img 
+			transition-style="out:wipe:up"
+			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="/al-naslaa-black-white.jpg" />
+		</main>
+		<script is:inline>
+			function sleepFor(sleepDuration){
+				var now = new Date().getTime();
+				while(new Date().getTime() < now + sleepDuration){ /* Do nothing */ }
+			}
+			// document.querySelectorAll("img").forEach(
+			// 	(elm) => {
+			// 		window.requestAnimationFrame(()=>{
+			// 			elm.setAttribute("transition-style", "out:wipe:up");
+			// 			// sleepFor(1000);
+			// 		})
+			// 	}
+			// )
+		</script>
 	</body>
 </html>
