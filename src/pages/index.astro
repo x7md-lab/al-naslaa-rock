@@ -11,7 +11,11 @@ import '@/styles/globals.css'
 		<link rel="preload" href="bg-image-narrow.png" as="image">
 		<title>Al Naslaa</title>
 		<style>
+			@font-face { font-family: 'Gotham Rounded Bold'; 
+			src: url('gotham-rounded-bold.otf') format('opentype');
+			}
 			html, body {
+				font-family: 'Gotham Rounded Bold', sans-serif;
 				max-height: 100vh;
 				height: 100%;
 			}
@@ -52,7 +56,7 @@ import '@/styles/globals.css'
 	</head>
 	<body>
 		<main class="grid justify-center items-center w-full relative">
-			<h2 class="absolute top-[35%] p-4 text-white drop-shadow-lg text-2xl font-bold text-center w-full capitalize">coming soon...</h2>
+			<h2 class="absolute top-[35%] md:top-[5%] p-4 text-[#aff9c7] drop-shadow-lg text-2xl md:text-4xl font-bold text-center w-full capitalize">coming soon...</h2>
 			<img class="w-[100vw] col-start-1 row-start-1 object-cover object-[center_75%]" src="./al-naslaa-art.png" />
 			<img 
 			transition-style="out:wipe:up4"
