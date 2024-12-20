@@ -8,10 +8,18 @@ import '@/styles/globals.css'
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preload" href="bg-image-narrow.png" as="image">
 		<title>Al Naslaa</title>
 		<style>
 			html, body {
+				max-height: 100vh;
 				height: 100%;
+			}
+			img {
+				height: 100vh;
+			}
+			body {
+				touch-action: none;
 			}
 			@keyframes wipe-out-up {
 			from {
@@ -43,21 +51,21 @@ import '@/styles/globals.css'
 		</style>
 	</head>
 	<body>
-		<main class="grid justify-center items-center w-full h-full relative max-h-full">
+		<main class="grid justify-center items-center w-full relative">
 			<h2 class="absolute p-4 text-white drop-shadow-lg text-6xl text-center w-full">Cooming Soon...</h2>
-			<img class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="./al-naslaa-art.png" />
+			<img class="w-[100vw] col-start-1 row-start-1 object-cover object-[0_75%]" src="./al-naslaa-art.png" />
 			<img 
 			transition-style="out:wipe:up4"
-			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="./al-naslaa.jpg" />
+			class="w-[100vw] col-start-1 row-start-1 object-cover object-[0_75%]" src="al-naslaa.jpg" />
 			<img 
 			transition-style="out:wipe:up3"
-			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="./al-naslaa-contrast.jpg" />
+			class="w-[100vw] col-start-1 row-start-1 object-cover object-[0_75%]" src="al-naslaa-contrast.jpg" />
 			<img 
 			transition-style="out:wipe:up2"
-			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="./al-naslaa-black-contrast.jpg" />
+			class="w-[100vw] col-start-1 row-start-1 object-cover object-[0_75%]" src="al-naslaa-black-contrast.jpg" />
 			<img 
 			transition-style="out:wipe:up"
-			class="h-full w-full col-start-1 row-start-1 object-cover md:object-none object-bottom" src="./al-naslaa-black-white.jpg" />
+			class="w-[100vw] col-start-1 row-start-1 object-cover object-[0_75%]" src="al-naslaa-black-white.jpg" />
 		</main>
 		<script is:inline>
 			function sleepFor(sleepDuration){
