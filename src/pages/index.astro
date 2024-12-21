@@ -118,14 +118,16 @@ import '@/styles/globals.css'
 						document.documentElement.style.setProperty("--scrolling", scrolling + "%");
 						document.querySelector("[data-alnaslaa]")
 						?.setAttribute("style", `clip-path: var(--cutit) !important`);
-						//console.log(state.axis, )
+						const data_ = parseInt(document.documentElement.style.getPropertyValue("--scrolling").replace("%", ""))
 						if(state.delta[1] < 0){
-							if(document.documentElement.style.getPropertyValue("--scrolling")){
+							if(!(data_ < 0)){
 								scrolling -= 1;
 							}
 						}
 						if(state.delta[1] > 0){
-							scrolling += 1;
+							if(!(data_ > 100)){
+								scrolling += 1;
+							}
 						}
 					}
 				},
