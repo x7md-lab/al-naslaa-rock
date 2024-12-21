@@ -67,8 +67,11 @@ import '@/styles/globals.css'
 	</head>
 	<body>
 		<main class="grid justify-center items-center w-full relative">
-			<h2 class="absolute top-[35%] md:top-[5%] p-4 text-[#aff9c7] drop-shadow-lg text-2xl md:text-4xl font-bold text-center w-full capitalize">coming soon...</h2>
-			<img class="w-[100vw] col-start-1 row-start-1 object-cover object-[center_75%]" src="./al-naslaa-art.png" />
+			<header class="absolute top-0 p-4 text-center w-full flex justify-center items-center">
+				<img src="./gr logo cropped.svg" class="max-h-[75px]">
+			</header>
+			<h2 class="absolute top-[35%] md:top-[20%] p-4 text-[#aff9c7] drop-shadow-2xl text-2xl md:text-4xl font-bold text-center w-full capitalize">coming soon...</h2>
+				<img class="w-[100vw] col-start-1 row-start-1 object-cover object-[center_75%]" src="./al-naslaa-art.png" />
 			<img 
 			transition-style="out:wipe:up4"
 			data-alnaslaa
@@ -96,15 +99,17 @@ import '@/styles/globals.css'
 						document.documentElement.style.setProperty("--scrolling", scrolling + "%");
 						document.querySelector("[data-alnaslaa]")
 						?.setAttribute("style", `clip-path: var(--cutit) !important`);
-						//console.log(state.axis, )
-						if(state.delta[1] > 0){
-							if(document.documentElement.style.getPropertyValue("--scrolling")){
-								scrolling -= 1;
+						const data_ = parseInt(document.documentElement.style.getPropertyValue("--scrolling").replace("%", ""))
+							if(state.delta[1] > 0){
+								if(!(data_ < 0)){
+									scrolling -= 1;
+								}
 							}
-						}
-						if(state.delta[1] < 0){
-							scrolling += 1;
-						}
+							if(state.delta[1] < 0){
+								if(!(data_ > 100)){
+									scrolling += 1;
+								}
+							}
 					}
 				},
 				onDrag: (state) => {
