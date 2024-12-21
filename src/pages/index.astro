@@ -44,25 +44,6 @@ import '@/styles/globals.css'
 				clip-path: inset(0 0 100% 0);
 			}
 			}
-			[transition-style="out:wipe:up"] {
-				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
-				animation-delay: 1s;
-			}
-
-			[transition-style="out:wipe:up2"] {
-				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
-				animation-delay: 1.75s;
-			}
-
-			[transition-style="out:wipe:up3"] {
-				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
-				animation-delay: 2.5s;
-			}
-
-			[transition-style="out:wipe:up4"] {
-				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
-				animation-delay: 3.75s;
-			}
 		</style>
 	</head>
 	<body>
@@ -134,23 +115,31 @@ import '@/styles/globals.css'
 			});
 		</script>
 		<script is:inline>
-			// .addEventListener("wheel", (e)=>{
-			// 	if(e.deltaY > 0){
-			// 		scrolling += 1
-			// 	} else {
-			// 		scrolling -= 1 
-			// 	}
-			// 	console.log(scrolling, e.deltaY)
-			// 	document.querySelector("[data-alnaslaa]").style = `--scrolling: ${scrolling}%; clip-path: var(--cutit) !important`
-			// });
-			// document.querySelectorAll("img").forEach(
-			// 	(elm) => {
-			// 		window.requestAnimationFrame(()=>{
-			// 			elm.setAttribute("transition-style", "out:wipe:up");
-			// 			// sleepFor(1000);
-			// 		})
-			// 	}
-			// )
+			document.addEventListener("DOMContentLoaded", ()=>{
+				const style_ = document.createElement("style");
+				style_.innerHTML = `
+				[transition-style="out:wipe:up"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 1s;
+			}
+
+			[transition-style="out:wipe:up2"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 1.75s;
+			}
+
+			[transition-style="out:wipe:up3"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 2.5s;
+			}
+
+			[transition-style="out:wipe:up4"] {
+				animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-up both;
+				animation-delay: 3.75s;
+			}
+				`
+				document.head.append(style_);
+			})
 		</script>
 	</body>
 </html>
