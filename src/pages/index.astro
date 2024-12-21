@@ -114,12 +114,12 @@ import '@/styles/globals.css'
 						document.querySelector("[data-alnaslaa]")
 						?.setAttribute("style", `clip-path: var(--cutit) !important`);
 						//console.log(state.axis, )
-						if(state.delta[1] > 0){
+						if(state.delta[1] < 0){
 							if(document.documentElement.style.getPropertyValue("--scrolling")){
 								scrolling -= 1;
 							}
 						}
-						if(state.delta[1] < 0){
+						if(state.delta[1] > 0){
 							scrolling += 1;
 						}
 					}
