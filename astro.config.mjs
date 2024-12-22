@@ -12,6 +12,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }
   )],
-  site: "https://lab.x7md.net/",
-  base : "/al-naslaa-rock/"
+  site: "https://www.greenrock.com.sa",
+  // base : "/al-naslaa-rock/"
 });
